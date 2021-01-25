@@ -1,0 +1,13 @@
+﻿@page
+@model StudentRecord.Pages.Registers.PageNotFoundModel
+@{
+    ViewData["Title"] = "NotFound";
+}
+
+
+<h2> The student profile does not exist!</h2>
+<img src="~/images/NotFoundImage.jpg" class="img-fluid" alt="Responsive image" asp-append-version="true" />
+<br />
+<br />
+
+<a asp-page="./List" class="btn btn-primary">See all students</a>

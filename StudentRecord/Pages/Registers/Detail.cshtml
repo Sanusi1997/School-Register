@@ -1,0 +1,25 @@
+﻿@page "{registerId:int}"
+@model StudentRecord.Pages.Registers.DetailModel
+@{
+    ViewData["Title"] = "Detail";
+}
+@if (Model.Message != null)
+{
+    <div class=" alert alert-info">@Model.Message</div>
+}
+
+<h2> @Model.Register.FirstName, @Model.Register.LastName</h2>
+
+<div>
+    Id: @Model.Register.Id
+</div>
+<div>
+    Department: @Model.Register.Department
+</div>
+<div>
+    Year: @Model.Register.Year
+</div>
+
+
+
+<a asp-page="./List" class="btn btn-outline-primary">All Students</a>

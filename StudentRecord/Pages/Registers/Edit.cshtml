@@ -1,0 +1,45 @@
+﻿@page  "{registerId:int?}"
+@model StudentRecord.Pages.Registers.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@if (@Model.Register.FirstName == null || @Model.Register.LastName == null)
+{
+    <h2>Create New Student </h2>
+}
+else
+{
+    <h2>Editing @Model.Register.FirstName, @Model.Register.LastName </h2>
+}
+
+
+
+<form method="post">
+
+    <input type="hidden" asp-for="Register.Id" />
+    <div class="form-group">
+        <label asp-for="Register.FirstName"> First  Name</label>
+        <input asp-for="Register.FirstName" class="form-control" />
+        <span class="text-danger" asp-validation-for="Register.FirstName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Register.LastName">Last Name</label>
+        <input asp-for="Register.LastName" class="form-control" />
+        <span class="text-danger" asp-validation-for="Register.LastName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Register.Department"> Department </label>
+        <select class="form-control" asp-for="Register.Department"
+                asp-items="Model.Department"></select>
+        <span class="text-danger" asp-validation-for="Register.Department"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Register.Year"> Year </label>
+        <select class="form-control" asp-for="Register.Year"
+                asp-items="Model.Year"></select>
+        <span class="text-danger" asp-validation-for="Register.Year"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

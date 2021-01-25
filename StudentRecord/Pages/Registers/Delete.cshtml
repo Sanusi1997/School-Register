@@ -1,0 +1,13 @@
+﻿@page "{registerId:int}"
+@model StudentRecord.Pages.Registers.DeleteModel
+@{
+}
+<h2>Delete!</h2>
+<div class="alert alert-danger">
+    Are you sure you want to delete @Model.Register.FirstName, @Model.Register.LastName ?
+</div>
+<form method="post">
+    <button class="btn btn-danger" type="submit">Yes!</button>
+    <a asp-page="List" class="btn btn-default">Cancel</a>
+
+</form>
